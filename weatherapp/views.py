@@ -1,10 +1,12 @@
 from django.shortcuts import render
 import requests
 import datetime
-API_KEY_1 = "49553570ad536febff0f85b9ea44ecb7"  
+from decouple import config
+
+API_KEY_1 = config('API_KEY_1')
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-API_KEY_2 = "AIzaSyChTqfNnKASdIRAstpSDmkqyUMJ3a10Ybw"  
-SEARCH_ENGINE_ID = "e05119406b4504790"  
+API_KEY_2 = config('API_KEY_2')
+SEARCH_ENGINE_ID = config('SEARCH_ENGINE_ID')
 def get_weather(city):
     """Helper function to fetch weather data for a city"""
     params = {
